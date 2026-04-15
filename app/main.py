@@ -2,7 +2,13 @@ import sys
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from loguru import logger
-from app.config import settings
+from app.config import settingsfrom app.routers import documents, query, health, scraper, search, admin
+
+
+#------------- for Admin --------------
+app.include_router(admin.router)
+
+
 
 # ── Logging ───────────────────────────────────────────────────
 logger.remove()
